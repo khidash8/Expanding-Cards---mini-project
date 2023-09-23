@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90vw;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.panel {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  flex: 0.5;
+  margin: 1rem;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  flex-wrap: wrap;
+}
+
+.panel h3 {
+  font-size: 2rem;
+  opacity: 0;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: #fff;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100vw;
+  }
+  .panel {
+    margin: 0.5rem;
+  }
+  .panel h3 {
+    font-size: 1.5rem;
+  }
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    display: none;
+  }
+}
